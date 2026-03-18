@@ -2,6 +2,16 @@ from flask import Flask, render_template, request, redirect, url_for, session
 import sqlite3
 import pandas as pd
 from werkzeug.security import generate_password_hash, check_password_hash
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+API_Email = os.getenv("Email")
+API_PASSWORD = os.getenv("Password")
+print(API_Email)
+print(API_PASSWORD)
+
 
 app = Flask(__name__)
 app.secret_key = "healthcare_secret"
@@ -176,7 +186,7 @@ def admin_login():
         email = request.form["email"]
         password = request.form["password"]
 
-        if email == "jatinmehra7665@gmail.com" and password == "jatin2@&#":
+        if email == API_Email  and password == API_PASSWORD:
             session["admin"] = True   # ✅ session set
             return redirect("/admin") # ✅ dashboard open
         else:
