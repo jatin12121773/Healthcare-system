@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Admin Login</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* BACKGROUND */
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #007BFF, #007BFF);
+}
+
+/* GLASS BOX */
+.box {
+    width: 350px;
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(15px);
+    background: rgba(255,255,255,0.1);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    text-align: center;
+    color: white;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* TITLE */
+.box h2 {
+    margin-bottom: 20px;
+}
+
+/* INPUT FIELD */
+.input-group {
+    position: relative;
+    margin-top: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    font-size: 14px;
+}
+
+.input-group input::placeholder {
+    color: #ddd;
+}
+
+/* BUTTON */
+button {
+    margin-top: 25px;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    background: #007BFF;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #007BFF;
+    transform: scale(1.05);
+}
+
+/* ICON */
+.icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+/* FOOTER TEXT */
+.footer {
+    margin-top: 15px;
+    font-size: 12px;
+    color: #eee;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+<div class="icon">🔐</div>
+
+<h2>Admin Login</h2>
+
+<form method="POST">
+
+<div class="input-group">
+<input type="email" name="email" placeholder="Enter Admin Email" required>
+</div>
+
+<div class="input-group">
+<input type="password" name="password" placeholder="Enter Password" required>
+</div>
+
+<button type="submit">Login</button>
+
+</form>
+
+<div class="footer">
+Secure Access Only
+</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <link rel="stylesheet" href="/static/simple.css">
+</head>
+<body>
+
+<div class="web-form-container">
+    <h2>Diagnosis Result</h2>
+
+    <div class="form-group">
+        <label>Patient Name:</label>
+        <p>{{ name }}</p>
+    </div>
+
+    <div class="form-group">
+        <label>Age:</label>
+        <p>{{ age }}</p>
+    </div>
+
+    <div class="form-group">
+        <h3>Selected Symptoms:</h3>
+<ul>
+    {% if symptoms %}
+        {% for symptom in symptoms %}
+            <li>{{ symptom }}</li>
+        {% endfor %}
+    {% else %}
+        <li>No symptoms selected</li>
+    {% endif %}
+</ul>
+    </div>
+
+    <div class="form-group">
+        <label>Predicted Disease:</label>
+        <p style="color:#d9534f; font-weight:bold; font-size:18px;">
+            {{ disease }}
+        </p>
+    </div>
+
+    <div class="form-group">
+        <label>Precautions:</label>
+        <ul>
+            {% for precaution in precautions %}
+                <li>{{ precaution }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <a href="/disease" style="text-decoration:none;">
+        <button class="btn-submit">Check Another Patient</button>
+    </a>
+
+</div>
+
+</body>
+</html>

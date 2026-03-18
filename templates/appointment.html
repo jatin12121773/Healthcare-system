@@ -1,0 +1,21 @@
+<section class="appointment" id="appointment">
+
+<h2>Book An Appointment</h2>
+
+<form action="{{ url_for('appointment') }}" method="POST">
+
+<input type="text" name="name" placeholder="Full Name" required>
+
+<input type="email" name="email" placeholder="Email Address" required>
+
+<input type="text" name="phone" placeholder="Phone Number" required>
+
+<input type="date" name="date" required>
+
+<textarea name="comment" placeholder="Your Message"></textarea>
+
+<button type="submit">Submit</button>
+
+</form>
+
+</section>

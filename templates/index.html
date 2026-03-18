@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>HealthCare Hospital</title>
+
+<link rel="stylesheet" href="/static/style.css">
+
+<!-- SweetAlert Popup Library -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+
+<body>
+
+<!-- APPOINTMENT POPUP -->
+{% if appointment_success %}
+<script>
+Swal.fire({
+title: "Appointment Confirmed!",
+text: "Doctor will contact you shortly.",
+icon: "success",
+showConfirmButton: false,
+timer: 3000,
+timerProgressBar: true
+})
+</script>
+{% endif %}
+
+<!-- CONTACT POPUP -->
+{% if contact_success %}
+<script>
+Swal.fire({
+title: "Message Sent!",
+text: "Thank you for contacting us.",
+icon: "success",
+confirmButtonColor: "#3085d6"
+})
+</script>
+{% endif %}
+
+<!-- HEADER -->
+<header>
+
+<div class="logo">HealthCare Hospital</div>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#appointment">Appointment</a>
+<a href="#contact">Contact</a>
+
+<button onclick="window.location.href='/signin'">Sign In</button>
+
+
+
+</nav>
+
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<h1>Advanced Healthcare With Compassion <br> & Excellence</h1>
+
+<p>
+We provide world-class medical services with cutting-edge technology,
+experienced specialists, and patient-centered care.
+</p>
+
+<a href="#appointment" class="btn">Book Appointment</a>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+
+<h2>About Our Hospital</h2>
+
+<p>
+Our team of highly qualified doctors and nurses provide personalized treatment
+plans for every patient.
+</p>
+
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+
+<h2>Our Medical Services</h2>
+
+<div class="service-box">
+
+<div class="card">
+<h3>General Checkup</h3>
+<p>Complete health examination.</p>
+</div>
+
+<div class="card">
+<h3>Heart Care</h3>
+<p>Advanced cardiology treatments.</p>
+</div>
+
+<div class="card">
+<h3>Emergency Care</h3>
+<p>24/7 emergency support.</p>
+</div>
+
+<div class="card">
+<h3>Child Specialist</h3>
+<p>Expert pediatricians.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- DOCTORS -->
+<section class="doctors">
+
+<h2>Meet Our Doctors</h2>
+
+<div class="doctor-box">
+
+<div class="doctor-card">
+<h3>Dr. Amit Sharma</h3>
+<p>Cardiologist</p>
+</div>
+
+<div class="doctor-card">
+<h3>Dr. Neha Verma</h3>
+<p>Pediatrician</p>
+</div>
+
+<div class="doctor-card">
+<h3>Dr. Rahul Mehta</h3>
+<p>General Physician</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- APPOINTMENT -->
+<section class="appointment" id="appointment">
+
+<h2>Book An Appointment</h2>
+
+<form action="{{ url_for('appointment') }}" method="POST">
+
+<input type="text" name="name" placeholder="Full Name" required>
+
+<input type="email" name="email" placeholder="Email Address" required>
+
+<input type="text" name="phone" placeholder="Phone Number" required>
+
+<input type="date" name="date" required>
+
+<textarea name="comment" placeholder="Your Message"></textarea>
+
+<button type="submit">Submit</button>
+
+</form>
+
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+
+<h2>What Our Patients Say</h2>
+
+<p>"Excellent service and caring doctors!"</p>
+<p>"Modern facilities and friendly staff."</p>
+
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+<h2>Contact Us</h2>
+
+<div class="contact-container">
+
+<div class="contact-info">
+<p><strong>Email:</strong> info@healthcarehospital.com</p>
+<p><strong>Phone:</strong> +91 9876543210</p>
+<p><strong>Address:</strong> Main Road, India</p>
+</div>
+
+<div class="contact-form">
+
+<h3>Send Message</h3>
+
+<form action="{{ url_for('contact') }}" method="POST">
+
+<input type="text" name="name" placeholder="Your Name" required>
+
+<input type="email" name="email" placeholder="Your Email" required>
+
+<textarea name="message" placeholder="Your Message" required></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+<p>© 2026 HealthCare Hospital | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
