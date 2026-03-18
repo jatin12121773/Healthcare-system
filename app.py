@@ -9,8 +9,7 @@ load_dotenv()
 
 API_Email = os.getenv("Email")
 API_PASSWORD = os.getenv("Password")
-print(API_Email)
-print(API_PASSWORD)
+
 
 
 app = Flask(__name__)
